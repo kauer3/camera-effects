@@ -7,7 +7,7 @@ public class Camera_TP : MonoBehaviour {
 	float xRotation;
 	float yRotation;
 
-	public Transform target;
+	public Transform player;
 	public float distance = 3;
 
 	public Vector2 yMinMax = new Vector2 (-20, 80);
@@ -21,6 +21,7 @@ public class Camera_TP : MonoBehaviour {
 		Vector3 targetRotation = new Vector3(yRotation, xRotation);
 		transform.eulerAngles = targetRotation;
 
-		transform.position = target.position - distance * transform.forward;
+		transform.position = player.position - distance * transform.forward;
+		player.localEulerAngles = Vector3.up * xRotation;
 	}
 }

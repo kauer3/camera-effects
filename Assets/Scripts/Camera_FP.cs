@@ -17,14 +17,15 @@ public class Camera_FP : MonoBehaviour {
 		player = transform.parent.transform;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		xRotation += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-		yRotation += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-		yRotation = Mathf.Clamp (yRotation, yMinMax.x, yMinMax.y);
+    // Update is called once per frame
+    void Update()
+    {
+        xRotation += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        yRotation += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        yRotation = Mathf.Clamp(yRotation, yMinMax.x, yMinMax.y);
 
 
-		transform.localEulerAngles = Vector3.left * yRotation;
-		player.localEulerAngles = Vector3.up * xRotation;
-	}
+        transform.localEulerAngles = Vector3.left * yRotation;
+        player.localEulerAngles = Vector3.up * xRotation;
+    }
 }
